@@ -1,10 +1,14 @@
 package entities;
 
+import entities.Enums.WarriorWeapons;
+
 public class Warrior extends Character {
     private String shield;
+    private WarriorWeapons weapons;
 
-    public Warrior(String name, Weapons weapons) {
-        super(name, 2000, 2000, 50, 150, weapons);
+    public Warrior(String name, WarriorWeapons weapons) {
+        super(name, 2000.00, 2000, 50, 30);
+        this.weapons = weapons;
         this.shield = "Wood Shield";
     }
 
@@ -24,5 +28,11 @@ public class Warrior extends Character {
     @Override
     public void special() {
 
+    }
+
+    @Override
+    public void atacar(Character character) {
+        double dano = 0.10 * getStrength();
+        character.setHealth(getHealth() - dano);
     }
 }
