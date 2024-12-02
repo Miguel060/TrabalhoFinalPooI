@@ -24,4 +24,8 @@ public class Thief extends Character {
     public void atacar(Character character) {
 
     }
+    @Override
+    public Double getMaxHealth() {
+        return 1400.00;
+    }
 }

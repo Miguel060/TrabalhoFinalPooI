@@ -9,7 +9,9 @@ public abstract class Character {
     protected Integer vigor;
     protected Integer intelligence;
     protected WarriorWeapons weapons;
-
+    protected Double MaxHealth;
+    protected int flagMaxHeal;
+    protected int flagMinHeal;
     public Character(String name, Double health, Integer strength, Integer vigor, Integer intelligence) {
         this.name = name;
         this.health = health;
@@ -62,6 +64,26 @@ public abstract class Character {
 
     public WarriorWeapons getWeapons() {
         return weapons;
+    }
+
+    public Double getMaxHealth() {
+        return MaxHealth;
+    }
+
+    public int getFlagMaxHeal() {
+        return flagMaxHeal;
+    }
+
+    public void setFlagMaxHeal(int flagMaxHeal) {
+        this.flagMaxHeal = flagMaxHeal;
+    }
+
+    public void setFlagMinHeal(int flagMinHeal) {
+        this.flagMinHeal = flagMinHeal;
+    }
+
+    public int getFlagMinHeal() {
+        return flagMinHeal;
     }
 
     public abstract void skill();

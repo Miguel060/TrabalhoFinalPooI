@@ -11,6 +11,7 @@ public class Sorcerer extends Character {
         this.weapons = weapons;
     }
 
+
     @Override
     public void skill() {
 
@@ -24,6 +25,10 @@ public class Sorcerer extends Character {
     @Override
     public void atacar(Character character) {
         double dano = 0.10 * getStrength();
-        character.setHealth(getHealth() - dano);
+        character.setHealth(character.getHealth() - dano);
+    }
+    @Override
+    public Double getMaxHealth() {
+        return 1300.00;
     }
 }

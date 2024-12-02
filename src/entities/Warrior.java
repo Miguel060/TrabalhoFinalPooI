@@ -6,6 +6,7 @@ public class Warrior extends Character {
     private String shield;
     private WarriorWeapons weapons;
 
+
     public Warrior(String name, WarriorWeapons weapons) {
         super(name, 2000.00, 2000, 50, 30);
         this.weapons = weapons;
@@ -33,6 +34,11 @@ public class Warrior extends Character {
     @Override
     public void atacar(Character character) {
         double dano = 0.10 * getStrength();
-        character.setHealth(getHealth() - dano);
+        character.setHealth(character.getHealth() - dano);
+    }
+
+    @Override
+    public Double getMaxHealth() {
+        return 2000.00;
     }
 }
