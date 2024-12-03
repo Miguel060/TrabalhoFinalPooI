@@ -1,14 +1,13 @@
 package entities;
 
-public class SorcererArmy extends AbstractArmy {
-
-    public SorcererArmy(Sorcerer sorcerer) {
-        super(sorcerer);
+public class WarriorArmy extends AbstractArmy{
+    public WarriorArmy(Character character) {
+        super(character);
     }
 
     @Override
     public String WarCry() {
-        return "Destruição gera criação!";
+        return "Por honra e glória, nenhum inimigo permanecerá de pé!";
     }
 
     @Override
@@ -16,5 +15,4 @@ public class SorcererArmy extends AbstractArmy {
         double dano = 0.20*getStrength();
         character.setHealth(character.getHealth() - dano);
     }
-
 }
