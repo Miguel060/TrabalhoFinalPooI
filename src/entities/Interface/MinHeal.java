@@ -9,6 +9,7 @@ public class MinHeal implements Heal {
             character.setHealth(character.getHealth() + character.getMaxHealth() / 2);
             if (character.getHealth() > character.getMaxHealth()) {
                 character.setHealth(character.getMaxHealth());
+                System.out.println(character.getName() + "utilizou o minHeal!");
             }
             character.setFlagMaxHeal(character.getFlagMaxHeal() + 1);
         } else {

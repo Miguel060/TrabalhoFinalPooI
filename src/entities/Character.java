@@ -12,12 +12,15 @@ public abstract class Character {
     protected Double MaxHealth;
     protected int flagMaxHeal;
     protected int flagMinHeal;
+    protected AbstractArmy army;
+
     public Character(String name, Double health, Integer strength, Integer vigor, Integer intelligence) {
         this.name = name;
         this.health = health;
         this.strength = strength;
         this.vigor = vigor;
         this.intelligence = intelligence;
+        this.army = null;
     }
 
     public String getName() {
@@ -62,9 +65,7 @@ public abstract class Character {
         return intelligence;
     }
 
-    public WarriorWeapons getWeapons() {
-        return weapons;
-    }
+    public abstract String getWeapons();
 
     public Double getMaxHealth() {
         return MaxHealth;
@@ -86,11 +87,16 @@ public abstract class Character {
         return flagMinHeal;
     }
 
+    public AbstractArmy getArmy() {
+        return army;
+    }
+
     public abstract void skill();
 
-    public abstract void special();
+    public abstract void special(Character character);
 
     public abstract void atacar(Character character);
 
-}
+    public abstract String infos();
 
+}

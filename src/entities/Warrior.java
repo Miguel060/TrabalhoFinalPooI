@@ -5,12 +5,12 @@ import entities.Enums.WarriorWeapons;
 public class Warrior extends Character {
     private String shield;
     private WarriorWeapons weapons;
-
-
+    private WarriorArmy army;
     public Warrior(String name, WarriorWeapons weapons) {
         super(name, 2000.00, 2000, 50, 30);
         this.weapons = weapons;
         this.shield = "Wood Shield";
+        this.army = new WarriorArmy(this);
     }
 
     public String getShield() {
@@ -22,13 +22,20 @@ public class Warrior extends Character {
     }
 
     @Override
-    public void skill() {
-
+    public String getWeapons() {
+        return weapons.toString();
     }
 
     @Override
-    public void special() {
+    public void skill() {
+        setHealth(getHealth() + (getHealth() * 0.20));
+    }
 
+
+    @Override
+    public void special(Character character) {
+        double dano = 0.30 * getStrength();
+        character.setHealth(character.getHealth() - dano);
     }
 
     @Override
@@ -40,5 +47,20 @@ public class Warrior extends Character {
     @Override
     public Double getMaxHealth() {
         return 2000.00;
+    }
+
+    @Override
+    public String infos(){
+        return "Nome: "+getName()+
+                " Arma: "+getWeapons()+
+                " Vida Total: "+getMaxHealth()+
+                " Inteligência: "+getIntelligence()+
+                " Força:  "+getStrength()+
+                " Vigor:"+getVigor()+
+                " Escudo:"+getShield();
+    }
+    @Override
+    public WarriorArmy getArmy() {
+        return army;
     }
 }

@@ -10,6 +10,7 @@ public class MaxHeal implements Heal{
     public void heal(Character character) {
         if(character.getFlagMaxHeal()<1) {
             character.setHealth(character.getMaxHealth());
+            System.out.println(character.getName()+" utilizou o maxHeal!");
             character.setFlagMaxHeal(character.getFlagMaxHeal()+1);
         }else{
             System.out.println("Não há MaxHeal disponível para o "+ character.getName()+"!");

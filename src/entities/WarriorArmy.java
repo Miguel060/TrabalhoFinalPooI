@@ -1,7 +1,7 @@
 package entities;
 
 public class WarriorArmy extends AbstractArmy{
-    public WarriorArmy(Character character) {
+    public WarriorArmy(Warrior character) {
         super(character);
     }
 
